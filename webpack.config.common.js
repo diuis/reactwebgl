@@ -1,18 +1,17 @@
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-    mode: 'development',
-    entry: './src/index.tsx',
-
-    devtool: 'source-map',
-    devServer: {
-        port: 8080,
-        publicPath: '/',
-        contentBase: './dist'
+    entry: {
+        app: './src/index.tsx'
     },
-
+    plugins: [
+        new CleanWebpackPlugin(['dist'])
+    ],
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
-
     module: {
         rules: [
             { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
@@ -20,9 +19,20 @@ module.exports = {
             { enforce: "pre", test: /\.js$/, loader: 'source-map-loader' }
         ]
     },
-
     externals: {
         "react": "React",
         "react-dom": "ReactDOM"
     }
 };
+
+
+// module.exports = {
+
+
+
+
+//     externals: {
+//         "react": "React",
+//         "react-dom": "ReactDOM"
+//     }
+// };

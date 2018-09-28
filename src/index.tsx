@@ -1,8 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import '../node_modules/video-react/dist/video-react.css';
-
 import { Application } from "./components/Application";
 
 ReactDOM.render(
