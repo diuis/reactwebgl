@@ -7,7 +7,7 @@ module.exports = {
         app: './src/index.tsx'
     },
     plugins: [
-        new CleanWebpackPlugin(['dist'])
+        //new CleanWebpackPlugin(['dist/main.js'])
     ],
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"]
@@ -18,6 +18,9 @@ module.exports = {
             { test: /\.css$/, use: 'css-loader' },
             { enforce: "pre", test: /\.js$/, loader: 'source-map-loader' }
         ]
+    },
+    output: {
+        filename: "dist/main.js"
     },
     externals: {
         "react": "React",
