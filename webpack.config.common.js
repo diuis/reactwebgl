@@ -20,7 +20,7 @@ module.exports = {
         ]
     },
     output: {
-        filename: "dist/main.js"
+        filename: "main.js"
     },
     externals: {
         "react": "React",
